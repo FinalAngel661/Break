@@ -1,9 +1,12 @@
 ﻿  main.cpp
-c:\users\kelsey.davis\desktop\pong-master\pong-master\gamemanager.h(100): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-c:\users\kelsey.davis\desktop\pong-master\pong-master\gamemanager.h(101): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-c:\users\kelsey.davis\desktop\pong-master\pong-master\gamemanager.h(102): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-c:\users\kelsey.davis\desktop\pong-master\pong-master\gamemanager.h(103): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-c:\users\kelsey.davis\desktop\pong-master\pong-master\gamemanager.h(117): warning C4551: function call missing argument list
-c:\users\kelsey.davis\desktop\pong-master\pong-master\main.cpp(21): warning C4101: 'Time': unreferenced local variable
-  Test.vcxproj -> C:\Users\kelsey.davis\Desktop\Pong-master\Pong-master\Debug\Test.exe
-  Test.vcxproj -> C:\Users\kelsey.davis\Desktop\Pong-master\Pong-master\Debug\Test.pdb (Full PDB)
+c:\users\kelsey.davis\desktop\break-master\break-master\gamemanager.h(103): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\kelsey.davis\desktop\break-master\break-master\gamemanager.h(104): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\kelsey.davis\desktop\break-master\break-master\gamemanager.h(105): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\kelsey.davis\desktop\break-master\break-master\gamemanager.h(106): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\kelsey.davis\desktop\break-master\break-master\gamemanager.h(134): warning C4551: function call missing argument list
+c:\users\kelsey.davis\desktop\break-master\break-master\main.cpp(53): warning C4551: function call missing argument list
+c:\users\kelsey.davis\desktop\break-master\break-master\main.cpp(23): warning C4101: 'Time': unreferenced local variable
+c:\users\kelsey.davis\desktop\break-master\break-master\main.cpp(11): warning C4101: 'velY': unreferenced local variable
+c:\users\kelsey.davis\desktop\break-master\break-master\main.cpp(11): warning C4101: 'velX': unreferenced local variable
+  Test.vcxproj -> C:\Users\kelsey.davis\Desktop\Break-master\Break-master\Debug\Test.exe
+  Test.vcxproj -> C:\Users\kelsey.davis\Desktop\Break-master\Break-master\Debug\Test.pdb (Full PDB)

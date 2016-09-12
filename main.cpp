@@ -6,28 +6,21 @@
 
 void main()
 {
+
+	GameManager gs;
+
+
 	int width = 800, height = 600;
 	float posX = 300, posY = 500;
 	float velX, velY;
 
 	sfw::initContext(width,height,"NSFW Draw");
 
-
 	sfw::setBackgroundColor(CYAN);
-	
-	Player myPlayer;
-	myPlayer.Tries = 2;
-
-	Player PlayerMovement;
-
-	ScoreandTime Time;
-
-	Boundary drawBound;
-	Ball drawBall;
 
 	unsigned r = sfw::loadTextureMap("./res/Boundary.png");
 
-	void BoundCollision();
+	/*void BoundCollision();
 	{
 
 
@@ -41,17 +34,19 @@ void main()
 			drawBall.velY *= 1;
 
 		}
-	}
+	}*/
 
 
 	while (sfw::stepContext())
 	{
-		
-		PlayerMovement.PlayerMovement();
-		drawBound.drawBound();
-		drawBall.drawBall();
-		BoundCollision;
+		gs.update();
+		if (isColliding(Ball, Player, Boundary))
+		{
+			Ball.flipX();
+			Ball.flipY();
+		}
 
+		gs.drawStatus();
 	}
 	sfw::termContext();
 }
