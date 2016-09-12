@@ -40,11 +40,13 @@ void main()
 	while (sfw::stepContext())
 	{
 		gs.update();
-		if (isColliding(Ball, Player, Boundary))
+		
+		/*if (isColliding(Ball, Player, Boundary))
 		{
 			Ball.flipX();
 			Ball.flipY();
 		}
+		*/
 
 		gs.drawStatus();
 	}
