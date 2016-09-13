@@ -8,21 +8,21 @@ const float identity[16] = { 1,0,0,0,  0,1,0,0, 0,0,1,0, 0,0,0,1 };
 void GameManager::init()
 {
 	//paddle logic
-	float playerx = 300;
+	playerx = 300;
 
 	//ball logic
-	float posX = 300, posY = 500;
-	float velX, velY;
+	 posX = 300, posY = 500;
+	 
 
 	// time and score
-	float x = 100;
-	float y = 100;
-	float x2 = 500;
-	float y2 = 100;
-	float counter = 0;
-	float size = 400;
+	 x = 100;
+	 y = 100;
+	 x2 = 500;
+	 y2 = 100;
+	 counter = 0;
+	 size = 400;
 
-	
+	 pl.init("%s");
 
 }
 
@@ -34,81 +34,48 @@ void GameManager::Start()
 
 void GameManager::update()
 {
-	
-	if (sfw::getKey('W'))
-	{
-		playerx += 1;
-	}
-		
-	sfw::drawLine(playerx, 100, playerx + 100, 100);
-		
-	if (sfw::getKey('S'))
-	{
-		playerx -= 1;
-	}
-		
-	sfw::drawLine(playerx, 100, playerx - 100, 100);
-		
-	if (sfw::getKey('A'))
-	{
-	
-		
-	}
-		
-	if (sfw::getKey('D'))
-	{
-		
 
-	}
-
-	//Ball Mechanics	
-	velX = 5;
-	velY = -5;
-	
-	posX += velX * sfw::getDeltaTime();
-	posY += velY * sfw::getDeltaTime();
-	
-	printf("%f,%f\n", posX, posY);
-	
-	sfw::drawCircle(posX, posY, 12, 12, RED);
-	
-	
-
+	pl.PlayerUpdate();
+	ball.BallUpdate();
 }
 
 
-void GameManager::drawStatus() const
+void GameManager::drawStatus()
 {
-	// Time and Score	
-	while (sfw::stepContext)
-	{
-		counter += sfw::getDeltaTime();
-		if (counter > 1.f)
-		{
-			counter = 0;
-			size /= 2;
-		}
-	}
-	
-	if (sfw::getKey('W'))
-		y += sfw::getDeltaTime() * 30;
-	
-	if (sfw::getKey('S'))
-		y -= sfw::getDeltaTime() * 30;
-	
-	if (sfw::getKey('A'))
-		y2 += sfw::getDeltaTime() * 30;
-	
-	if (sfw::getKey('D'))
-		y2 -= sfw::getDeltaTime() * 30;
-	
-	sfw::drawLine(x, y, x, y + size, CYAN);
-	sfw::drawLine(x2, y2, x2, y2 + size, RED);
-	
-	
+
+	pl.drawPlayer();
+	ball.drawBall();
+
+	//// Time and Score	
+	//while (sfw::stepContext)
+	//{
+	//	counter += sfw::getDeltaTime();
+	//	if (counter > 1.f)
+	//	{
+	//		counter = 0;
+	//		size /= 2;
+	//	}
+	//}
+	//
+	//if (sfw::getKey('W'))
+	//	y += sfw::getDeltaTime() * 30;
+	//
+	//if (sfw::getKey('S'))
+	//	y -= sfw::getDeltaTime() * 30;
+	//
+	//if (sfw::getKey('A'))
+	//	y2 += sfw::getDeltaTime() * 30;
+	//
+	//if (sfw::getKey('D'))
+	//	y2 -= sfw::getDeltaTime() * 30;
+	//
+	//sfw::drawLine(x, y, x, y + size, CYAN);
+	//sfw::drawLine(x2, y2, x2, y2 + size, RED);
+	//
+	//
 	//Player player1;
-	int p1score;
-	
+	/*int p1score;
+	*/
 	
 
 }

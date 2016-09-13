@@ -1,29 +1,37 @@
 #pragma once
-
+#include "Player.h"
+#include "Ball.h"
+#include "Graphics.h"
 
 class GameManager
 {
-	////paddle logic
-	//float playerx = 300;
 
-	////ball logic
-	//float posX = 300, posY = 500;
-	//float velX, velY;
+	Graphics gr;
 
-	//// time and score
-	//float x = 100;
-	//float y = 100;
-	//float x2 = 500;
-	//float y2 = 100;
-	//float counter = 0;
-	//float size = 400;
+	//paddle logic
+	Player pl;
+	float playerx;
+
+	//ball logic
+	Ball ball;
+	float posX, posY;
+	float velX, velY;
+
+
+	// time and score
+	float x;
+	float y;
+	float x2;
+	float y2;
+	float counter;
+	float size;
 
 
 public:
 	void init();
 	void update();
 	void Start();
-	void drawStatus() const;
+	void Draw();
 	//void drawRound() const;
 	bool isGameOver() const;
 
@@ -31,4 +39,4 @@ public:
 
 };
 
-bool isColliding(const Ball &a, const Player &b, const Boundary &c);
+//bool isColliding(const Ball &a, const Player &b, const Boundary &c);

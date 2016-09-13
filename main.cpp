@@ -16,9 +16,10 @@ void main()
 
 	sfw::initContext(width,height,"NSFW Draw");
 
-	sfw::setBackgroundColor(CYAN);
+	//sfw::setBackgroundColor(CYAN);
 
 	unsigned r = sfw::loadTextureMap("./res/Boundary.png");
+	unsigned s = sfw::loadTextureMap("./res/Background.png");
 
 	/*void BoundCollision();
 	{
@@ -40,7 +41,7 @@ void main()
 	while (sfw::stepContext())
 	{
 		gs.update();
-		
+
 		/*if (isColliding(Ball, Player, Boundary))
 		{
 			Ball.flipX();
@@ -48,7 +49,7 @@ void main()
 		}
 		*/
 
-		gs.drawStatus();
+		gs.Draw();
 	}
 	sfw::termContext();
 }
