@@ -13,6 +13,6 @@ void Graphics::drawBoundary()
 
 void Graphics::drawBackgound()
 {
-	unsigned s = sfw::loadTextureMap("./res/Background.png");
+	unsigned s = sfw::loadTextureMap("./res/Background.jpg");
 	sfw::drawTexture(s, 0, 0, 800, 600, 0, false, 0, 0x88888888);
 }

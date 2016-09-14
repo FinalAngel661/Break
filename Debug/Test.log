@@ -1,23 +1,8 @@
-﻿  main.cpp
-c:\users\kelsey.davis\desktop\break-master\break-master\main.cpp(15): warning C4101: 'velY': unreferenced local variable
-c:\users\kelsey.davis\desktop\break-master\break-master\main.cpp(15): warning C4101: 'velX': unreferenced local variable
-  GameManager.cpp
-  Ball.cpp
-  Generating Code...
-sfw_d.lib(gl_core_4_4.obj) : warning LNK4099: PDB 'nsfw2draw.pdb' was not found with 'sfw_d.lib(gl_core_4_4.obj)' or at 'C:\Users\kelsey.davis\Desktop\Break-master\Break-master\Debug\nsfw2draw.pdb'; linking object as if no debug info
-sfw_d.lib(crenderutils.obj) : warning LNK4099: PDB 'nsfw2draw.pdb' was not found with 'sfw_d.lib(crenderutils.obj)' or at 'C:\Users\kelsey.davis\Desktop\Break-master\Break-master\Debug\nsfw2draw.pdb'; linking object as if no debug info
-sfw_d.lib(sfwdraw.obj) : warning LNK4099: PDB 'nsfw2draw.pdb' was not found with 'sfw_d.lib(sfwdraw.obj)' or at 'C:\Users\kelsey.davis\Desktop\Break-master\Break-master\Debug\nsfw2draw.pdb'; linking object as if no debug info
-sfw_d.lib(wgl_context.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'sfw_d.lib(wgl_context.obj)' or at 'C:\Users\kelsey.davis\Desktop\Break-master\Break-master\Debug\glfw.pdb'; linking object as if no debug info
-sfw_d.lib(winmm_joystick.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'sfw_d.lib(winmm_joystick.obj)' or at 'C:\Users\kelsey.davis\Desktop\Break-master\Break-master\Debug\glfw.pdb'; linking object as if no debug info
-sfw_d.lib(win32_window.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'sfw_d.lib(win32_window.obj)' or at 'C:\Users\kelsey.davis\Desktop\Break-master\Break-master\Debug\glfw.pdb'; linking object as if no debug info
-sfw_d.lib(win32_tls.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'sfw_d.lib(win32_tls.obj)' or at 'C:\Users\kelsey.davis\Desktop\Break-master\Break-master\Debug\glfw.pdb'; linking object as if no debug info
-sfw_d.lib(win32_time.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'sfw_d.lib(win32_time.obj)' or at 'C:\Users\kelsey.davis\Desktop\Break-master\Break-master\Debug\glfw.pdb'; linking object as if no debug info
-sfw_d.lib(win32_monitor.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'sfw_d.lib(win32_monitor.obj)' or at 'C:\Users\kelsey.davis\Desktop\Break-master\Break-master\Debug\glfw.pdb'; linking object as if no debug info
-sfw_d.lib(win32_init.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'sfw_d.lib(win32_init.obj)' or at 'C:\Users\kelsey.davis\Desktop\Break-master\Break-master\Debug\glfw.pdb'; linking object as if no debug info
-sfw_d.lib(window.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'sfw_d.lib(window.obj)' or at 'C:\Users\kelsey.davis\Desktop\Break-master\Break-master\Debug\glfw.pdb'; linking object as if no debug info
-sfw_d.lib(monitor.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'sfw_d.lib(monitor.obj)' or at 'C:\Users\kelsey.davis\Desktop\Break-master\Break-master\Debug\glfw.pdb'; linking object as if no debug info
-sfw_d.lib(input.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'sfw_d.lib(input.obj)' or at 'C:\Users\kelsey.davis\Desktop\Break-master\Break-master\Debug\glfw.pdb'; linking object as if no debug info
-sfw_d.lib(init.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'sfw_d.lib(init.obj)' or at 'C:\Users\kelsey.davis\Desktop\Break-master\Break-master\Debug\glfw.pdb'; linking object as if no debug info
-sfw_d.lib(context.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'sfw_d.lib(context.obj)' or at 'C:\Users\kelsey.davis\Desktop\Break-master\Break-master\Debug\glfw.pdb'; linking object as if no debug info
-  Test.vcxproj -> C:\Users\kelsey.davis\Desktop\Break-master\Break-master\Debug\Test.exe
-  Test.vcxproj -> C:\Users\kelsey.davis\Desktop\Break-master\Break-master\Debug\Test.pdb (Full PDB)
+﻿  GameManager.cpp
+c:\users\kelsey.davis\downloads\break-master\break-master\gamemanager.cpp(128): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\kelsey.davis\downloads\break-master\break-master\gamemanager.cpp(129): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\kelsey.davis\downloads\break-master\break-master\gamemanager.cpp(130): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\kelsey.davis\downloads\break-master\break-master\gamemanager.cpp(131): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\kelsey.davis\downloads\break-master\break-master\gamemanager.cpp(136): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+  Test.vcxproj -> C:\Users\kelsey.davis\Downloads\Break-master\Break-master\Debug\Test.exe
+  Test.vcxproj -> C:\Users\kelsey.davis\Downloads\Break-master\Break-master\Debug\Test.pdb (Full PDB)

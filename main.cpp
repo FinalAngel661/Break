@@ -3,53 +3,73 @@
 #include <iostream>
 #include <conio.h>
 #include "GameManager.h"
+#include "Splash.h"
 
 void main()
 {
+	int width = 800, height = 600;
+	sfw::initContext(width, height, "NSFW Draw");
 
 	GameManager gs;
+	gs.init();
 
+	
 
-	int width = 800, height = 600;
-	float posX = 300, posY = 500;
-	float velX, velY;
+	
 
-	sfw::initContext(width,height,"NSFW Draw");
+	unsigned font = sfw::loadTextureMap("./res/tonc_font.png", 16, 6);
 
-	//sfw::setBackgroundColor(CYAN);
+	Splash Splash;
+	Splash.init(font);
 
-	unsigned r = sfw::loadTextureMap("./res/Boundary.png");
-	unsigned s = sfw::loadTextureMap("./res/Background.png");
+	APP_STATE state = ENTERSPLASH;
 
-	/*void BoundCollision();
-	{
-
-
-
-		if (drawBall.posY > height)
-		{
-			drawBall.velY *= -1;
-		}
-		else (drawBall.posY < height);
-		{
-			drawBall.velY *= 1;
-
-		}
-	}*/
-
+	//unsigned r = sfw::loadTextureMap("./res/Boundary.png");
+	//unsigned s = sfw::loadTextureMap("./res/Background.jpg");
 
 	while (sfw::stepContext())
 	{
 		gs.update();
 
-		/*if (isColliding(Ball, Player, Boundary))
+		switch (state)
 		{
-			Ball.flipX();
-			Ball.flipY();
+		case ENTERSPLASH:
+			Splash.play();
+		case SPLASH:
+			Splash.step();
+			Splash.draw();
+			state = Splash.next();
+			break;
 		}
-		*/
-
 		gs.Draw();
+		//sfw::drawTexture(s, 0, height, 800, 600, 0, false);
 	}
 	sfw::termContext();
 }
+
+
+/*void BoundCollision();
+{
+
+
+
+if (drawBall.posY > height)
+{
+drawBall.velY *= -1;
+}
+else (drawBall.posY < height);
+{
+drawBall.velY *= 1;
+
+}
+}*/
+
+/*if (isColliding(Ball, Player, Boundary))
+{
+Ball.flipX();
+Ball.flipY();
+}
+*/
+
+//float posX = 300, posY = 500;
+//float velX, velY;

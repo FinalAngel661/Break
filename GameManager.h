@@ -1,7 +1,32 @@
 #pragma once
-#include "Player.h"
-#include "Ball.h"
 #include "Graphics.h"
+
+class Player
+{
+	char name[64];
+	int lives;
+
+public:
+	float playerx = 300;
+	void takeDamage(int dmg);
+	void init(const char a_name[]);
+	void drawPlayer();
+	void PlayerUpdate();
+};
+
+class Ball
+{
+	float posX;
+	float posY;
+	int velX;
+	int velY;
+public:
+	void init();
+	void drawBall();
+	void BallUpdate();
+
+};
+
 
 class GameManager
 {
@@ -30,7 +55,6 @@ class GameManager
 public:
 	void init();
 	void update();
-	void Start();
 	void Draw();
 	//void drawRound() const;
 	bool isGameOver() const;
@@ -40,3 +64,13 @@ public:
 };
 
 //bool isColliding(const Ball &a, const Player &b, const Boundary &c);
+
+class TimeScore
+{
+	int plScore;
+	float timer;
+public:
+	void drawTime();
+	void drawScore();
+
+};

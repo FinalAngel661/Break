@@ -1,0 +1,16 @@
+#pragma once
+
+
+enum APP_STATE
+{
+	TERMINATE,
+
+	SPLASH,
+	ENTERSPLASH,
+	ENTERQUIT,
+	QUIT,
+
+	ENTERMAINNENU,
+	MAINMENU
+
+};

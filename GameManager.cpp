@@ -2,6 +2,7 @@
 #include <iostream>
 #include <conio.h>
 #include "GameManager.h"
+#include "Graphics.h"
 
 const float identity[16] = { 1,0,0,0,  0,1,0,0, 0,0,1,0, 0,0,0,1 };
 
@@ -23,13 +24,9 @@ void GameManager::init()
 	 size = 400;
 
 	 pl.init("%s");
+	 ball.init();
 
-}
-
-void GameManager::Start()
-{
-
-	
+	 gr.init();
 }
 
 void GameManager::update()
@@ -37,47 +34,112 @@ void GameManager::update()
 
 	pl.PlayerUpdate();
 	ball.BallUpdate();
+
 }
 
 
-void GameManager::drawStatus()
+void GameManager::Draw()
 {
-
+	gr.drawBackgound();
+	gr.drawBoundary();
 	pl.drawPlayer();
 	ball.drawBall();
 
-	//// Time and Score	
-	//while (sfw::stepContext)
-	//{
-	//	counter += sfw::getDeltaTime();
-	//	if (counter > 1.f)
-	//	{
-	//		counter = 0;
-	//		size /= 2;
-	//	}
-	//}
-	//
-	//if (sfw::getKey('W'))
-	//	y += sfw::getDeltaTime() * 30;
-	//
-	//if (sfw::getKey('S'))
-	//	y -= sfw::getDeltaTime() * 30;
-	//
-	//if (sfw::getKey('A'))
-	//	y2 += sfw::getDeltaTime() * 30;
-	//
-	//if (sfw::getKey('D'))
-	//	y2 -= sfw::getDeltaTime() * 30;
-	//
-	//sfw::drawLine(x, y, x, y + size, CYAN);
-	//sfw::drawLine(x2, y2, x2, y2 + size, RED);
-	//
-	//
-	//Player player1;
-	/*int p1score;
-	*/
-	
 
+}
+
+
+void Player::init(const char a_name[])
+{
+	lives = 1;
+
+}
+
+void Player::takeDamage(int dmg)
+{
+	lives -= dmg;
+}
+
+void Player::drawPlayer()
+{
+	sfw::drawLine(playerx, 100, playerx + 100, 100);
+	sfw::drawLine(playerx, 100, playerx - 100, 100);
+
+}
+
+void Player::PlayerUpdate()
+{
+
+	if (sfw::getKey('W'))
+	{
+		playerx += 1;
+	}
+
+	if (sfw::getKey('S'))
+	{
+		playerx -= 1;
+	}
+
+
+	if (sfw::getKey('A'))
+	{
+
+
+	}
+
+	if (sfw::getKey('D'))
+	{
+
+
+	}
+
+}
+
+
+
+void Ball::init()
+{
+	posX = 500; posY = 500;
+}
+
+void Ball::drawBall()
+{
+	sfw::drawCircle(posX, posY, 12, 12, RED);
+}
+
+void Ball::BallUpdate()
+{
+	velX = 5;
+	velY = -5;
+
+	posX += velX * sfw::getDeltaTime();
+	posY += velY * sfw::getDeltaTime();
+}
+
+void Graphics::init()
+{
+	bounds = sfw::loadTextureMap("./res/Boundary.png");
+	background = sfw::loadTextureMap("./res/Background.jpg");
+}
+
+void Graphics::drawBoundary()
+{
+	
+	sfw::drawTexture(bounds, 785, 50, sfw::getTextureWidth(bounds), sfw::getTextureHeight(bounds), 90, false, 0, 0x88888888);
+	sfw::drawTexture(bounds, 5, 50, sfw::getTextureWidth(bounds), sfw::getTextureHeight(bounds), 90, false, 0, 0x88888888);
+	sfw::drawTexture(bounds, 50, 595, sfw::getTextureWidth(bounds), sfw::getTextureHeight(bounds), 0, false, 0, 0x88888888);
+	sfw::drawTexture(bounds, 5, 50, sfw::getTextureWidth(bounds), sfw::getTextureHeight(bounds), 0, false, 0, 0x88888888);
+}
+
+void Graphics::drawBackgound()
+{
+	sfw::drawTexture(background, 400,300, sfw::getTextureWidth(background), sfw::getTextureHeight(background), 0, true);
+}
+
+
+bool GameManager::isGameOver() const
+{
+	return false;
 }
 
 
