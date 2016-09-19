@@ -1,8 +1,8 @@
 ﻿  GameManager.cpp
-c:\users\kelsey.davis\downloads\break-master\break-master\gamemanager.cpp(128): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-c:\users\kelsey.davis\downloads\break-master\break-master\gamemanager.cpp(129): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-c:\users\kelsey.davis\downloads\break-master\break-master\gamemanager.cpp(130): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-c:\users\kelsey.davis\downloads\break-master\break-master\gamemanager.cpp(131): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-c:\users\kelsey.davis\downloads\break-master\break-master\gamemanager.cpp(136): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\kelsey.davis\downloads\break-master\break-master\gamemanager.cpp(181): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\kelsey.davis\downloads\break-master\break-master\gamemanager.cpp(182): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\kelsey.davis\downloads\break-master\break-master\gamemanager.cpp(183): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\kelsey.davis\downloads\break-master\break-master\gamemanager.cpp(184): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\kelsey.davis\downloads\break-master\break-master\gamemanager.cpp(189): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
   Test.vcxproj -> C:\Users\kelsey.davis\Downloads\Break-master\Break-master\Debug\Test.exe
   Test.vcxproj -> C:\Users\kelsey.davis\Downloads\Break-master\Break-master\Debug\Test.pdb (Full PDB)

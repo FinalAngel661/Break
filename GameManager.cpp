@@ -13,7 +13,6 @@ void GameManager::init()
 
 	//ball logic
 	 posX = 300, posY = 500;
-	 
 
 	// time and score
 	 x = 100;
@@ -25,8 +24,9 @@ void GameManager::init()
 
 	 pl.init("%s");
 	 ball.init();
-
+	 bo.init();
 	 gr.init();
+
 }
 
 void GameManager::update()
@@ -34,6 +34,16 @@ void GameManager::update()
 
 	pl.PlayerUpdate();
 	ball.BallUpdate();
+	if (collision(pl, ball))
+	{
+		ball.velY = -ball.velY;
+		/*ball.posY -= pl.playery - (ball.posY + ball.radius);*/
+	}
+	if (BoundCollision(bo, ball))
+	{
+		ball.velY = -ball.velY;
+
+	}
 
 }
 
@@ -46,6 +56,48 @@ void GameManager::Draw()
 	ball.drawBall();
 
 
+}
+
+bool GameManager::collision(Player pl,Ball ball)
+{
+	if (pl.playery < ball.posY && pl.playery > ball.posY - ball.radius)
+	{
+		if (ball.posX + ball.radius > pl.playerx - 100 && ball.posX + ball.radius < pl.playerx + 100)
+		{
+			return true;
+		}
+		else if (ball.posX - ball.radius > pl.playerx - 100 && ball.posX - ball.radius < pl.playerx + 100)
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
+void Bound::init()
+{
+	int Window_Width = 800;
+	int Window_Height = 600;
+
+}
+
+
+
+bool GameManager::BoundCollision(Bound bo, Ball ball)
+{
+	if (bo.Window_Height < ball.posY && bo.Window_Height > ball.posY - ball.radius)
+	{
+		if (ball.posX + ball.radius > bo.Window_Width - 100 && ball.posX + ball.radius < bo.Window_Width + 100)
+		{
+			return true;
+		}
+		else if (ball.posX - ball.radius > bo.Window_Width - 100 && ball.posX - ball.radius < bo.Window_Width + 100)
+		{
+			return true;
+		}
+	}
+
+	return false;
 }
 
 
@@ -62,8 +114,8 @@ void Player::takeDamage(int dmg)
 
 void Player::drawPlayer()
 {
-	sfw::drawLine(playerx, 100, playerx + 100, 100);
-	sfw::drawLine(playerx, 100, playerx - 100, 100);
+	sfw::drawLine(playerx, playery, playerx + 100, 300);
+	sfw::drawLine(playerx, playery, playerx - 100, 300);
 
 }
 
@@ -99,22 +151,23 @@ void Player::PlayerUpdate()
 
 void Ball::init()
 {
+	velX = 0;
+	velY = -25;
 	posX = 500; posY = 500;
 }
 
 void Ball::drawBall()
 {
-	sfw::drawCircle(posX, posY, 12, 12, RED);
+	sfw::drawCircle(posX, posY, radius, 12, RED);
 }
 
 void Ball::BallUpdate()
 {
-	velX = 5;
-	velY = -5;
 
 	posX += velX * sfw::getDeltaTime();
 	posY += velY * sfw::getDeltaTime();
 }
+
 
 void Graphics::init()
 {

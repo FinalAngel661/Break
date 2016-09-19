@@ -1,5 +1,6 @@
 #pragma once
 #include "Graphics.h"
+#include "sfwdraw.h"
 
 class Player
 {
@@ -8,6 +9,7 @@ class Player
 
 public:
 	float playerx = 300;
+	float playery = 300;
 	void takeDamage(int dmg);
 	void init(const char a_name[]);
 	void drawPlayer();
@@ -16,21 +18,35 @@ public:
 
 class Ball
 {
-	float posX;
-	float posY;
-	int velX;
-	int velY;
+	//float posX;
+	//float posY;
+	//int velX;
+	//int velY;
+	//float radius = 12;
 public:
 	void init();
 	void drawBall();
 	void BallUpdate();
+	float posX;
+	float posY;
+	int velX;
+	int velY;
+	float radius = 12;
 
 };
 
+class Bound
+{
+	
+public:
+	int Window_Width = 800;
+	int Window_Height = 600;
+	void init();
+};
 
 class GameManager
 {
-
+	Bound bo;
 	Graphics gr;
 
 	//paddle logic
@@ -56,6 +72,8 @@ public:
 	void init();
 	void update();
 	void Draw();
+	bool collision(Player pl, Ball ball);
+	bool BoundCollision(Bound, Ball ball);
 	//void drawRound() const;
 	bool isGameOver() const;
 

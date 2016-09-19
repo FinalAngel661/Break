@@ -1,4 +1,3 @@
-
 #include "sfwdraw.h"
 #include <iostream>
 #include <conio.h>
@@ -7,8 +6,8 @@
 
 void main()
 {
-	int width = 800, height = 600;
-	sfw::initContext(width, height, "NSFW Draw");
+
+	sfw::initContext(800, 600, "NSFW Draw");
 
 	GameManager gs;
 	gs.init();
