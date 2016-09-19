@@ -4,6 +4,7 @@
 #include "GameManager.h"
 #include "Splash.h"
 
+
 void main()
 {
 
@@ -28,8 +29,6 @@ void main()
 
 	while (sfw::stepContext())
 	{
-		gs.update();
-
 		switch (state)
 		{
 		case ENTERSPLASH:
@@ -40,6 +39,7 @@ void main()
 			state = Splash.next();
 			break;
 		}
+		gs.update();
 		gs.Draw();
 		//sfw::drawTexture(s, 0, height, 800, 600, 0, false);
 	}

@@ -9,7 +9,7 @@ const float identity[16] = { 1,0,0,0,  0,1,0,0, 0,0,1,0, 0,0,0,1 };
 void GameManager::init()
 {
 	//paddle logic
-	playerx = 300;
+	playerx = 100;
 
 	//ball logic
 	 posX = 300, posY = 500;
@@ -39,11 +39,13 @@ void GameManager::update()
 		ball.velY = -ball.velY;
 		/*ball.posY -= pl.playery - (ball.posY + ball.radius);*/
 	}
-	if (BoundCollision(bo, ball))
-	{
-		ball.velY = -ball.velY;
+	//if (BoundCollision(bo, ball))
+	//{
+	//	ball.velY = -ball.velY;
 
-	}
+	//}
+	BoundCollision(bo, ball);
+
 
 }
 
@@ -83,19 +85,47 @@ void Bound::init()
 
 
 
-bool GameManager::BoundCollision(Bound bo, Ball ball)
+bool GameManager::BoundCollision(Bound bo, Ball &ball)
 {
-	if (bo.Window_Height < ball.posY && bo.Window_Height > ball.posY - ball.radius)
+	// top
+	if (ball.posY + ball.radius > bo.Window_Height)
 	{
-		if (ball.posX + ball.radius > bo.Window_Width - 100 && ball.posX + ball.radius < bo.Window_Width + 100)
-		{
-			return true;
-		}
-		else if (ball.posX - ball.radius > bo.Window_Width - 100 && ball.posX - ball.radius < bo.Window_Width + 100)
-		{
-			return true;
-		}
+		ball.velY *= -1;
+		return true;
 	}
+
+	// bottom
+	if (ball.posY - ball.radius < 0)
+	{
+		ball.velY += 1;
+		return true;
+	}
+
+	// left
+	if (ball.posX - ball.radius < 0)
+	{
+		ball.velX *= -1;
+		return true;
+	}
+
+	// right
+	if (ball.posX + ball.radius > bo.Window_Width)
+	{
+		ball.velX += 1;
+		return true;
+	}
+
+	//if (bo.Window_Height < ball.posY && bo.Window_Height > ball.posY - ball.radius)
+	//{
+	//	if (ball.posX + ball.radius > bo.Window_Width - 100 && ball.posX + ball.radius < bo.Window_Width + 100)
+	//	{
+	//		return true;
+	//	}
+	//	else if (ball.posX - ball.radius > bo.Window_Width - 100 && ball.posX - ball.radius < bo.Window_Width + 100)
+	//	{
+	//		return true;
+	//	}
+	//}
 
 	return false;
 }
@@ -152,7 +182,7 @@ void Player::PlayerUpdate()
 void Ball::init()
 {
 	velX = 0;
-	velY = -25;
+	velY = -50;
 	posX = 500; posY = 500;
 }
 

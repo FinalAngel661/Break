@@ -73,7 +73,7 @@ public:
 	void update();
 	void Draw();
 	bool collision(Player pl, Ball ball);
-	bool BoundCollision(Bound, Ball ball);
+	bool BoundCollision(Bound, Ball &ball);
 	//void drawRound() const;
 	bool isGameOver() const;
 
