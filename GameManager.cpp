@@ -91,13 +91,15 @@ bool GameManager::BoundCollision(Bound bo, Ball &ball)
 	if (ball.posY + ball.radius > bo.Window_Height)
 	{
 		ball.velY *= -1;
+		ball.posY = bo.Window_Height - ball.radius;
 		return true;
 	}
 
 	// bottom
 	if (ball.posY - ball.radius < 0)
 	{
-		ball.velY += 1;
+		ball.velY *= -1;
+		ball.posY = ball.radius;
 		return true;
 	}
 
@@ -111,22 +113,9 @@ bool GameManager::BoundCollision(Bound bo, Ball &ball)
 	// right
 	if (ball.posX + ball.radius > bo.Window_Width)
 	{
-		ball.velX += 1;
+		ball.velX *= -1;
 		return true;
 	}
-
-	//if (bo.Window_Height < ball.posY && bo.Window_Height > ball.posY - ball.radius)
-	//{
-	//	if (ball.posX + ball.radius > bo.Window_Width - 100 && ball.posX + ball.radius < bo.Window_Width + 100)
-	//	{
-	//		return true;
-	//	}
-	//	else if (ball.posX - ball.radius > bo.Window_Width - 100 && ball.posX - ball.radius < bo.Window_Width + 100)
-	//	{
-	//		return true;
-	//	}
-	//}
-
 	return false;
 }
 
@@ -145,7 +134,7 @@ void Player::takeDamage(int dmg)
 void Player::drawPlayer()
 {
 	sfw::drawLine(playerx, playery, playerx + 100, 300);
-	sfw::drawLine(playerx, playery, playerx - 100, 300);
+	sfw::drawLine(playerx, playery, playerx - 100, 300, MAGENTA);
 
 }
 
@@ -181,8 +170,8 @@ void Player::PlayerUpdate()
 
 void Ball::init()
 {
-	velX = 0;
-	velY = -50;
+	velX = 20;
+	velY = -100;
 	posX = 500; posY = 500;
 }
 
@@ -223,6 +212,11 @@ void Graphics::drawBackgound()
 bool GameManager::isGameOver() const
 {
 	return false;
+}
+
+APP_STATE GameManager::next()
+{
+	return GAME;
 }
 
 

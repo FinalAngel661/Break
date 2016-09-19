@@ -38,9 +38,13 @@ void main()
 			Splash.draw();
 			state = Splash.next();
 			break;
+		case ENTERGAME:
+			gs.init();
+		case GAME:
+			gs.update();
+			gs.Draw();
+			state = gs.next();
 		}
-		gs.update();
-		gs.Draw();
 		//sfw::drawTexture(s, 0, height, 800, 600, 0, false);
 	}
 	sfw::termContext();

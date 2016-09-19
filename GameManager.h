@@ -1,6 +1,7 @@
 #pragma once
 #include "Graphics.h"
 #include "sfwdraw.h"
+#include "constd.h"
 
 class Player
 {
@@ -76,6 +77,7 @@ public:
 	bool BoundCollision(Bound, Ball &ball);
 	//void drawRound() const;
 	bool isGameOver() const;
+	APP_STATE next();
 
 
 

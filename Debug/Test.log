@@ -1,8 +1,11 @@
 ﻿  main.cpp
-  LINK : C:\Users\kelsey.davis\Downloads\Break-master\Break-master\Debug\Test.exe not found or not built by the last incremental link; performing full link
-Splash.obj : error LNK2005: "public: void __thiscall Splash::draw(void)" (?draw@Splash@@QAEXXZ) already defined in main.obj
-Splash.obj : error LNK2005: "public: void __thiscall Splash::init(int)" (?init@Splash@@QAEXH@Z) already defined in main.obj
-Splash.obj : error LNK2005: "public: enum APP_STATE __thiscall Splash::next(void)" (?next@Splash@@QAE?AW4APP_STATE@@XZ) already defined in main.obj
-Splash.obj : error LNK2005: "public: void __thiscall Splash::play(void)" (?play@Splash@@QAEXXZ) already defined in main.obj
-Splash.obj : error LNK2005: "public: void __thiscall Splash::step(void)" (?step@Splash@@QAEXXZ) already defined in main.obj
-C:\Users\kelsey.davis\Downloads\Break-master\Break-master\Debug\Test.exe : fatal error LNK1169: one or more multiply defined symbols found
+  Splash.cpp
+  GameManager.cpp
+c:\users\kelsey.davis\downloads\break-master\break-master\gamemanager.cpp(200): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\kelsey.davis\downloads\break-master\break-master\gamemanager.cpp(201): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\kelsey.davis\downloads\break-master\break-master\gamemanager.cpp(202): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\kelsey.davis\downloads\break-master\break-master\gamemanager.cpp(203): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\kelsey.davis\downloads\break-master\break-master\gamemanager.cpp(208): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+  Generating Code...
+  Test.vcxproj -> C:\Users\kelsey.davis\Downloads\Break-master\Break-master\Debug\Test.exe
+  Test.vcxproj -> C:\Users\kelsey.davis\Downloads\Break-master\Break-master\Debug\Test.pdb (Full PDB)
