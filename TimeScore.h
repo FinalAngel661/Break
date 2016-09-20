@@ -7,6 +7,8 @@ class TimeScore
 	float timer;
 public:
 	void drawTime();
-	void drawScore();
+	void ScoreUp();
+
+//	void ScoreUp(Player * player);
 
 };

@@ -16,7 +16,7 @@ void Splash::draw()
 {
 	char buffer[64];
 	char splash[64];
-	sprintf_s(splash, "This is a splash screen");
+	sprintf_s(splash, "LOADING...");
 	sprintf_s(buffer, "Time left: %f", timer);
 	sfw::drawString(font, buffer, 100, 100, 20, 20);
 	sfw::drawString(font, splash, 100, 200, 20, 20);

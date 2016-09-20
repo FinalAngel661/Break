@@ -1,14 +1,29 @@
 #include "TimeScore.h"
-
+#include "GameManager.h"
 void TimeScore::drawTime()
 {
 
 }
 
-void TimeScore::drawScore()
-{
+//void TimeScore::ScoreUp()
+//{
+//	if (pl == player1)
+//		plScore++;
+//
+//}
 
-}
+
+//void ScoreUp(cPaddle * player)
+//{
+//	if (player == player1)
+//		score1++;
+//	else if (player == player2)
+//		score2++;
+//
+//	ball->Reset();
+//	player1->Reset();
+//	player2->Reset();
+//}
 
 
 //// Time and Score	

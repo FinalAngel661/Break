@@ -3,10 +3,14 @@
 #include <conio.h>
 #include "GameManager.h"
 #include "Graphics.h"
+#include "TimeScore.h"
+#include <time.h>
+
+
 
 const float identity[16] = { 1,0,0,0,  0,1,0,0, 0,0,1,0, 0,0,0,1 };
 
-void GameManager::init()
+void GameManager::init(int a_font)
 {
 	//paddle logic
 	playerx = 100;
@@ -21,6 +25,7 @@ void GameManager::init()
 	 y2 = 100;
 	 counter = 0;
 	 size = 400;
+	 font = a_font;
 
 	 pl.init("%s");
 	 ball.init();
@@ -53,10 +58,12 @@ void GameManager::update()
 void GameManager::Draw()
 {
 	gr.drawBackgound();
-	gr.drawBoundary();
+	//gr.drawBoundary();
 	pl.drawPlayer();
 	ball.drawBall();
-
+	char score[64];
+	sprintf_s(score, 64, "Score: %d", ball.plScore);
+	sfw::drawString(font, score, 100, 200, 20, 20);
 
 }
 
@@ -100,6 +107,7 @@ bool GameManager::BoundCollision(Bound bo, Ball &ball)
 	{
 		ball.velY *= -1;
 		ball.posY = ball.radius;
+		ball.plScore++;
 		return true;
 	}
 
@@ -170,8 +178,8 @@ void Player::PlayerUpdate()
 
 void Ball::init()
 {
-	velX = 20;
-	velY = -100;
+	velX = 70;
+	velY = -300;
 	posX = 500; posY = 500;
 }
 
@@ -197,7 +205,7 @@ void Graphics::init()
 void Graphics::drawBoundary()
 {
 	
-	sfw::drawTexture(bounds, 785, 50, sfw::getTextureWidth(bounds), sfw::getTextureHeight(bounds), 90, false, 0, 0x88888888);
+	sfw::drawTexture(bounds, 785, 50, sfw::getTextureWidth(bounds), 500, 90, false, 0, 0x88888888);
 	sfw::drawTexture(bounds, 5, 50, sfw::getTextureWidth(bounds), sfw::getTextureHeight(bounds), 90, false, 0, 0x88888888);
 	sfw::drawTexture(bounds, 50, 595, sfw::getTextureWidth(bounds), sfw::getTextureHeight(bounds), 0, false, 0, 0x88888888);
 	sfw::drawTexture(bounds, 5, 50, sfw::getTextureWidth(bounds), sfw::getTextureHeight(bounds), 0, false, 0, 0x88888888);
@@ -216,8 +224,25 @@ bool GameManager::isGameOver() const
 
 APP_STATE GameManager::next()
 {
-	return GAME;
+	if (ball.plScore >= 5)
+	{
+		return ENTERSPLASH;
+	}
+	else
+	{
+		return GAME;
+	}
+
 }
+
+//void TimeScore::ScoreUp(Player * player)
+//{
+//	if (pl == player1)
+//		plScore++;
+//
+//	drawString(font, std::(plScore).c_str(), 0, 580, 40, 40, '\0');
+//
+//}
 
 
 //void GameManager::drawRound()

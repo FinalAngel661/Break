@@ -7,25 +7,17 @@
 
 void main()
 {
-
 	sfw::initContext(800, 600, "NSFW Draw");
+	unsigned font = sfw::loadTextureMap("./res/tonc_font.png", 16, 6);
 
 	GameManager gs;
-	gs.init();
-
-	
-
-	
-
-	unsigned font = sfw::loadTextureMap("./res/tonc_font.png", 16, 6);
+	gs.init(font);
 
 	Splash Splash;
 	Splash.init(font);
 
 	APP_STATE state = ENTERSPLASH;
 
-	//unsigned r = sfw::loadTextureMap("./res/Boundary.png");
-	//unsigned s = sfw::loadTextureMap("./res/Background.jpg");
 
 	while (sfw::stepContext())
 	{
@@ -39,13 +31,12 @@ void main()
 			state = Splash.next();
 			break;
 		case ENTERGAME:
-			gs.init();
+			gs.init(font);
 		case GAME:
 			gs.update();
 			gs.Draw();
 			state = gs.next();
 		}
-		//sfw::drawTexture(s, 0, height, 800, 600, 0, false);
 	}
 	sfw::termContext();
 }
