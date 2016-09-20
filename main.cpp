@@ -3,6 +3,7 @@
 #include <conio.h>
 #include "GameManager.h"
 #include "Splash.h"
+#include "Quit.h"
 
 
 void main()
@@ -15,6 +16,9 @@ void main()
 
 	Splash Splash;
 	Splash.init(font);
+
+	Quit quit;
+	quit.init(font);
 
 	APP_STATE state = ENTERSPLASH;
 
@@ -36,6 +40,14 @@ void main()
 			gs.update();
 			gs.Draw();
 			state = gs.next();
+			break;
+		case ENTERQUIT:
+			quit.play();
+		case QUIT:
+			quit.step();
+			quit.draw();
+			state = quit.next();
+			break;
 		}
 	}
 	sfw::termContext();

@@ -126,6 +126,7 @@
   <ItemGroup>
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Quit.cpp" />
     <ClCompile Include="Splash.cpp" />
     <ClCompile Include="TimeScore.cpp" />
   </ItemGroup>
@@ -134,6 +135,7 @@
     <ClInclude Include="constd.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Quit.h" />
     <ClInclude Include="Splash.h" />
     <ClInclude Include="TimeScore.h" />
   </ItemGroup>

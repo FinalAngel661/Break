@@ -10,6 +10,7 @@
 
 const float identity[16] = { 1,0,0,0,  0,1,0,0, 0,0,1,0, 0,0,0,1 };
 
+
 void GameManager::init(int a_font)
 {
 	//paddle logic
@@ -99,6 +100,7 @@ bool GameManager::BoundCollision(Bound bo, Ball &ball)
 	{
 		ball.velY *= -1;
 		ball.posY = bo.Window_Height - ball.radius;
+		ball.p2Score++;
 		return true;
 	}
 
@@ -178,9 +180,18 @@ void Player::PlayerUpdate()
 
 void Ball::init()
 {
-	velX = 70;
-	velY = -300;
-	posX = 500; posY = 500;
+	if (init2 > 0)
+	{
+		printf("im here!");
+		velX = 70;
+		velY = -300;
+		posX = 500; posY = 500;
+		plScore = 0;
+		p2Score = 0;
+		init2 = 0;
+	}
+	
+
 }
 
 void Ball::drawBall()
@@ -224,15 +235,23 @@ bool GameManager::isGameOver() const
 
 APP_STATE GameManager::next()
 {
-	if (ball.plScore >= 5)
+	//char ans; 
+	char ans1[64] = "Would you like to play again? (Y/N): ";
+	if (ball.plScore >= 5 || ball.p2Score >= 5)
 	{
-		return ENTERSPLASH;
+		sfw::drawString(font, ans1, 100, 300, 16, 16, 0);
+		if (sfw::getKey('Y'))
+		{
+			ball.init2 = 1;
+			return ENTERGAME;
+		}
+		else if (sfw::getKey('N'))
+		{
+			ball.init2 = 1;
+			return ENTERQUIT;
+		}
 	}
-	else
-	{
-		return GAME;
-	}
-
+	return ENTERGAME;
 }
 
 //void TimeScore::ScoreUp(Player * player)

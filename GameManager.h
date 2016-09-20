@@ -34,8 +34,9 @@ public:
 	int velY;
 	float radius = 12;
 	int plScore;
+	int p2Score;
 	float timer;
-
+	int init2 = 1;
 };
 
 class Bound
@@ -85,6 +86,7 @@ public:
 	Bound bo;
 	Graphics gr;
 	int font;
+	char ans;
 
 	//paddle logic
 	Player pl;
