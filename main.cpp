@@ -52,30 +52,3 @@ void main()
 	}
 	sfw::termContext();
 }
-
-
-/*void BoundCollision();
-{
-
-
-
-if (drawBall.posY > height)
-{
-drawBall.velY *= -1;
-}
-else (drawBall.posY < height);
-{
-drawBall.velY *= 1;
-
-}
-}*/
-
-/*if (isColliding(Ball, Player, Boundary))
-{
-Ball.flipX();
-Ball.flipY();
-}
-*/
-
-//float posX = 300, posY = 500;
-//float velX, velY;

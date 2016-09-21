@@ -2,6 +2,7 @@
 #include "Splash.h"
 #include "sfwdraw.h"
 #include <cstdio>
+#include <stdlib.h>
 
 void Quit::init(int a_font)
 {
@@ -29,7 +30,9 @@ void Quit::step()
 APP_STATE Quit::next()
 {
 	if (timer < 0 || sfw::getKey('Q'))
-		return ENTERSPLASH;
+	{
+		 exit(0);
+	}
 
 	return QUIT;
 }

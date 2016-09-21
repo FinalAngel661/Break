@@ -19,11 +19,7 @@ public:
 
 class Ball
 {
-	//float posX;
-	//float posY;
-	//int velX;
-	//int velY;
-	//float radius = 12;
+
 public:
 	void init();
 	void drawBall();
@@ -51,27 +47,6 @@ public:
 
 class GameManager
 {
-	//Bound bo;
-	//Graphics gr;
-
-	////paddle logic
-	//Player pl;
-	//float playerx;
-
-	////ball logic
-	//Ball ball;
-	//float posX, posY;
-	//float velX, velY;
-
-
-	//// time and score
-	//float x;
-	//float y;
-	//float x2;
-	//float y2;
-	//float counter;
-	//float size;
-
 
 public:
 	void init(int a_font);
@@ -79,7 +54,6 @@ public:
 	void Draw();
 	bool collision(Player pl, Ball ball);
 	bool BoundCollision(Bound, Ball &ball);
-	//void drawRound() const;
 	bool isGameOver() const;
 	APP_STATE next();
 
@@ -106,19 +80,6 @@ public:
 	float counter;
 	float size;
 	Player *player1;
+	Player *player2;
 
 };
-
-//bool isColliding(const Ball &a, const Player &b, const Boundary &c);
-
-//class TimeScore
-//{
-//	int plScore;
-//	float timer;
-//public:
-//	void drawTime();
-//	void ScoreUp();
-//	int plScore;
-//	float timer;
-//
-//};

@@ -182,7 +182,6 @@ void Ball::init()
 {
 	if (init2 > 0)
 	{
-		printf("im here!");
 		velX = 70;
 		velY = -300;
 		posX = 500; posY = 500;

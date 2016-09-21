@@ -129,6 +129,7 @@
     <ClCompile Include="Quit.cpp" />
     <ClCompile Include="Splash.cpp" />
     <ClCompile Include="TimeScore.cpp" />
+    <ClCompile Include="Victory.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ball.h" />
@@ -138,6 +139,7 @@
     <ClInclude Include="Quit.h" />
     <ClInclude Include="Splash.h" />
     <ClInclude Include="TimeScore.h" />
+    <ClInclude Include="Victory.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

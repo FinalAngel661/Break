@@ -30,6 +30,9 @@
     <ClCompile Include="Quit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Victory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameManager.h">
@@ -51,6 +54,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Quit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Victory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
